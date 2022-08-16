@@ -13,18 +13,18 @@ function SearchBar({ placeholder, data }) {
         const newFiltered = data.filter((value) => {
             return value.title.toLowerCase().includes(searchWord.toLowerCase())
         })
-        
-        if (searchWord ==="") {
+
+        if (searchWord === "") {
             setFilteredData([])
         } else {
-            
+
             setFilteredData(newFiltered)
         }
     }
     const clearInput = () => {
         setFilteredData([])
         setWordEntry('')
-        
+
     }
 
     return (
@@ -33,9 +33,9 @@ function SearchBar({ placeholder, data }) {
                 <input type="text" name="" id="" placeholder={placeholder} onChange={handlefiltered} value={wordEntry} />
                 <div className='searchIcon'>
                     {filteredData.length === 0 ?
-                        < FaSearch  />:
-                    <FaWindowClose id='clearBtn' onClick={clearInput} />}
-                    
+                        < FaSearch /> :
+                        <FaWindowClose id='clearBtn' onClick={clearInput} />}
+
                 </div>
             </div>
             {
